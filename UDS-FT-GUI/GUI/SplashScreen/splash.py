@@ -1,6 +1,7 @@
 import tkinter as tk
 import GUI.gui as gui
 import time
+import FOP.FileOp as fop
 
 def callMainWindow():
     splash_screen.destroy()
@@ -11,8 +12,10 @@ def showSS():
     splash_screen = tk.Tk()
     splash_screen.title("Splash Screen")
 
+    image_name = "NASH_logo.png"
+    image_path = fop.get_image_path(image_name=image_name)
     # Load splash image
-    splash_image = tk.PhotoImage(file="D:\\Vishnu\\Ancit-CANTOOLS\\local\\UDS-FT-GUI\\NASH_logo.png")
+    splash_image = tk.PhotoImage(file=image_path)
 
     # Set the size of the splash screen
     splash_width = 400

@@ -19,6 +19,7 @@ def startTask(obj_log,file_path):
 
 
     # If hardware init unsuccessful exit with error
+    
     if bus == "BUS_INIT_ERROR":
         log.log_message(log_area=log_obj,message="CAN initialization failed..\n")
 
