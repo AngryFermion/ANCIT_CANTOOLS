@@ -11,7 +11,7 @@ import Commons.common as UDS_ID
 import FOP.hexop as fp
 import time as tym
 import CAN.HW_init as can
-
+import logger.screenLog as screen_log
 
 TESTING_ON = 0
 CONSOLE_PRINT = 1
@@ -118,8 +118,11 @@ def SetMemoryLocation(address):
 
 
 
-def StartUdsFlashing(file_path, can_inst,service,bus):
+def StartUdsFlashing(file_path, can_inst,service,bus,log_obj):
 
+    global logg
+
+    logg = log_obj
     
     # Prints the application hex file details
 
@@ -155,6 +158,8 @@ def StartUdsFlashing(file_path, can_inst,service,bus):
                     
                     client.change_session(DiagnosticSessionControl.Session.programmingSession)
                     print("Programming session Request complete.\n")
+
+                    screen_log.log_message(log_area=logg,message="Programming session Request complete.")
                     
                     client.start_routine(UDS_ID.ERASE_ROUTINE_ID)
                     

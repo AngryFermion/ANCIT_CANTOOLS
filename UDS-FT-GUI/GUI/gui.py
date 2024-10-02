@@ -17,7 +17,7 @@ def browse_file():
         
 
 
-def on_button1_click():
+def on_flash_click():
     # sl.log_message("Button 1 clicked.",log_area=log_area)
     task.startTask(log_area,file_path=file_path)
 
@@ -77,7 +77,7 @@ def show_main_window():
     # Two buttons in the bottom area
     # 
     global button1
-    button1 = tk.Button(button_frame, text="FLASH", command=on_button1_click,state=tk.DISABLED)
+    button1 = tk.Button(button_frame, text="FLASH", command=on_flash_click,state=tk.DISABLED)
     button1.pack(side=tk.LEFT, padx=5)
 
 
