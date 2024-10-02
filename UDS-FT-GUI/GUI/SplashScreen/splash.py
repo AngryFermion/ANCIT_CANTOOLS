@@ -12,8 +12,8 @@ def showSS():
     splash_screen = tk.Tk()
     splash_screen.title("Splash Screen")
 
-    image_name = "NASH_logo.png"
-    image_path = fop.get_image_path(image_name=image_name)
+    relative_path = "NASH_logo.png"
+    image_path = fop.get_image_path(relative_path=relative_path)
     # Load splash image
     splash_image = tk.PhotoImage(file=image_path)
 
